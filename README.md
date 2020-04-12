@@ -1,5 +1,5 @@
 # Diy.finder
-This Tool for Find Directories of Admin in Any Web Sites. 
+This Tool is for Find admins directories in any Websites. 
 modules of script:
 pyfiglet
 requests
