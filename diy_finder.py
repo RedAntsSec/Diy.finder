@@ -52,7 +52,7 @@ except KeyboardInterrupt:
     time.sleep(2)
     exit()
 if dic == '':
-    print ('\033[91mNo File Found\nExiting ...')
+    print ('\033[91mFile Not Found\nExiting ...')
     time.sleep(2)
     exit()
 else:
