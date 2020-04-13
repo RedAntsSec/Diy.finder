@@ -8,7 +8,7 @@ from colorama import init
 
 def logo():
     
-    init()  #for start the colors in windows
+    init()  #for start the colors in cmd of windows
     if os.name == 'nt':
         os.system('cls')  #clear console
     else:
