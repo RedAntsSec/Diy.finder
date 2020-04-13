@@ -34,7 +34,7 @@ def finder():
             print ('\033[91m[-] Site Not Found [-]')
             exit()
         if r.status_code == 200:
-            print ('\n\033[92m[+] Directory of Target Find : %s' % url)
+            print ('\n\033[92m[+] Directory of Target Found : %s' % url)
             
         else:
             print ('\n\033[91m[*] Not Found : %s ' % url)
