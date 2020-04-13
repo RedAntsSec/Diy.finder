@@ -24,6 +24,7 @@ def logo():
 |____/|_|\__, | |_|   |_|_| |_|\__,_|\___|_|
          |___/
 
+v1.0.1
     """)
     print ('@RedAntsSec  (Github/Telegram)')
     print ('\nCreated By j0hn for RED ANTS TEAM\n\nWE ARE IRANIAN HACKERS!\n')
