@@ -3,7 +3,7 @@ This is a tool to find available directories in a web site which listed at a dic
 The Code is written in Python3.8 and following modules has been 
 used:
 1) requests
-# Call to me or my team
+# Call me or my team
 You can contact me by this email (For any bugs , suggestions and ...) : j0hn.redants@secmail.pro
 
 Our page and channel in Github and Telegram : @RedAntsSec
