@@ -10,4 +10,4 @@ Our page and channel in Github and Telegram : @RedAntsSec
 
 Our team Email: Red_Ants_Sec@secmail.pro
 
-WE ARE IRANINAN!!! WE ARE RED ANTS!!!
+WE ARE IRANIAN!!! WE ARE RED ANTS!!!
