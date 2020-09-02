@@ -3,7 +3,8 @@ import random
 import os
 from time import sleep
 from colorama import init
-from sys import argv
+#from sys import argv
+import argparse
 
 
 def logo():
@@ -44,20 +45,19 @@ def finder():
             url = target + d
             
             try:
+
                 if proxy != "":
                     prox_conf = {protocol:proxy}
-                    url = "http://" + url
                     r = requests.get(url, proxies=prox_conf)
+
                 else:
-                    url = "http://" + url
                     r = requests.get(url) #send a request to url with http
+            
             except:
                 if proxy != "":
                     prox_conf = {protocol:proxy}
-                    url = "https://" + url
                     r = requests.get(url, proxies=prox_conf)
                 else:
-                    url = "https://" + url
                     r = requests.get(url) #send a request to url with https
         except KeyboardInterrupt:
             print('\n\033[91mUser Using CTRL-C ...')
@@ -68,13 +68,13 @@ def finder():
         except:
             print ('\033[91m[-] Site Not Found [-]')
             exit()
-        if r.status_code == 200:
-            print ('\n\033[92m[+] Directory of Target Found : %s' % url)
+        if r.status_code == 200 or r.status_code == 403:
+            print ('\n\033[92m[+] Directory of Target Found : %s [%s]' %(url,r.status_code))
             success = open("Success.txt","a")
             success.write(url + "\n") #write success urls in file
             success.close() #close the file
         else:
-            print ('\n\033[91m[i] Not Found : %s ' % url)
+            print ('\n\033[91m[i] Not Found : %s [%s] ' % (url,r.status_code))
 
 
 
@@ -90,56 +90,23 @@ def main():
     global protocol
     init()
     logo()
-    try:
-        try:
-            target = argv[1]
-            try:
-                dic = argv[2] 
-            except:
-                dic = "path.txt"
-            try:
-                proxy = argv[3]
-            except:
-                proxy = ""
-            try:
-                protocol = argv[4]
-            except:
-                protocol = ""
-        except:
-            
-            print ("\033[93m\nUsage: python "+argv[0]+" example.com path.txt proxy protocol_of_proxy")
-            exit()
-            if "http://" in target or "https://" in target:
-                target = target.replace("http://","")
-                target = target.replace("https://","")
-                if target[-1] == "/":
-                    target = target.replace("/","")
-                    print ("[ ~ ] Your Target: " + target)
-            
-    except KeyboardInterrupt:
-        print('\033[91mUser Using CTRL-C ...')
-        sleep(2)
-        print('\033[91mExiting ... ')
-        sleep(2)
-        exit()
-    if dic == '':
-        print ('\033[91mNo File Found\nExiting ...')
-        sleep(2)
-        exit()
-    else:
+    parser = argparse.ArgumentParser(description='Usage:')
+    parser.add_argument('--target',type=str,required=True)
+    parser.add_argument('--dictionary', type=str,default="path.txt")
+    parser.add_argument('--proxy' ,type=str)
+    parser.add_argument('--protocol',type=str,default="http://")
+    args = parser.parse_args()
+    
+    target = args.target
+    dic = args.dictionary
+    proxy = args.proxy
+    protocol = args.protocol
+
+    if "http://" in target or "https://" in target and target[-1] == "/":
         pass
+    else:
+        target = protocol+target+"/"
 
     finder()
-while True:
+if '__main__' in __name__:
     main()
-    i = str(input('\033[93m\n[~] Do You Want To Continue? [Y/n] -> '))
-    if i == 'y' or i == 'Y':
-        main()
-    if i == 'n' or i == 'N':
-        print ('\033[31mExiting...')
-        sleep(2)
-        exit()
-    else:
-        print ('\033[31mExiting...')
-        sleep(2)
-        exit()
