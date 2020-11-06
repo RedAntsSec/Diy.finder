@@ -4,8 +4,7 @@ The Code is written in Python3.8 and following modules has been
 used:
 1) requests
 # Call me or my team
-You can contact me by this email (For any bugs , suggestions and ...) : j0hn.redants@secmail.pro
-
+You can contact me by this email (For any bugs , suggestions and ...) : RedAntsSec@gmail.com
 Our page and channel in Github and Telegram : @RedAntsSec
 
 Our team Email: Red_Ants_Sec@secmail.pro
