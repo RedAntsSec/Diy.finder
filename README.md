@@ -7,6 +7,5 @@ used:
 You can contact me by this email (For any bugs , suggestions and ...) : RedAntsSec@gmail.com
 Our page and channel in Github and Telegram : @RedAntsSec
 
-Our team Email: Red_Ants_Sec@secmail.pro
-
+Our team Email: RedAntsSec@gmail.com
 WE ARE IRANIAN!!! WE ARE RED ANTS!!!
